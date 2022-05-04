@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: eksdemo
+  template:
+    metadata:
+      labels:
+        app: eksdemo
+    spec:
+      containers:
+        - name: back-end
+          image: 938057753719.dkr.ecr.us-east-1.amazonaws.com/gautam-eks:1.0.0-DEV
+          ports:
+            - containerPort: 8080
