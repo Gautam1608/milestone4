@@ -4,6 +4,13 @@ kind: ClusterConfig
 metadata:
   name: milestone4-cluster
   region: us-east-1
+vpc:
+  subnets:
+    private:
+      us-east-1d: { id: subnet-0f184f2b2e9936220 }
+      us-east-1a: { id: subnet-01f321a807bf51903 }
+      us-east-1c: { id: subnet-0db77c8a5d74da149 }
+
 
 nodeGroups:
   - name: ng-1-workers
